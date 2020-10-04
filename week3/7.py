@@ -1,11 +1,3 @@
-import string
-
-ABC = string.ascii_letters
-
-def shift(message,offset):
-    trans = str.maketrans(ABC,ABC[offset:] + ABC[:offset])
-    return message.translate(trans)
-
 def main():
 
     text = """Cbcq Dgyk!
@@ -18,8 +10,16 @@ def main():
     Ynyb"""
 
     print(text)
-    print(shift(text,2))
+    
+    t1 = "abc...ABC.."
+    t2 = "cdef...zabCDE..."
 
+    for c in text:
+        pos = t1.find(c)
+        if pos == -1:
+            print(c, end="")
+        else: 
+            print(t2[pos])
 
 if __name__ == "__main__":
     main()
