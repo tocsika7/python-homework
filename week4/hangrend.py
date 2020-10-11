@@ -1,26 +1,32 @@
-MELY = 'aáoóuú'
-MAGAS = 'eéiíöőüű'
+MELY_MGH = 'aáoóuú'
+MAGAS_MGH = 'eéiíöőüű'
+
+MELY = 0
+MAGAS = 1
+VEGYES = 2
 
 def hangrend(word):
     mely = 0
     magas = 0
     for c in word:
-        if c in list(MELY):
+        if c in list(MELY_MGH):
             mely += 1
         else:
-            if c in list(MAGAS):
+            if c in list(MAGAS_MGH):
                 magas += 1
 
     if magas > 0 and mely > 0:
-        return 'vegyes'
+        return 1
     else:
         if mely > 0: 
-            return 'mély'
+            return 0
         else:
-            return 'magas'
+            return 2
 
 def main():
     print(hangrend('kisvasút'))
+    print(hangrend('magas'))
+    print(hangrend('mély'))
 
 
 
