@@ -3,6 +3,8 @@
 import sys
 
 
+''' Függvény amely kiírja az angol abc kisbetűit. 
+@param reverse : bool Igaz érték esetén fordítva írja ki az abc betűit.'''
 def printABC(reverse=False):
     abc = ''
     for i in range(97,122):

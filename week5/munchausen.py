@@ -1,3 +1,11 @@
+''' Függvény amely megadja hogy az adott szám Munchausen szám-e. 
+
+Egy szám Münchausen szám ha minden számjegyét az adott számjegy értékére
+emelve és ezeket összeadva a számot kapjuk.  
+
+@param num: int A szám amiről el akarjuk dönteni hogy Münchausen szám-e. 
+@return bool True: Münchausen szám False: nem Münchausen szám. 
+'''
 def isMunchausen(num):
     digit_pows = []
     for c in str(num):
