@@ -69,19 +69,26 @@ looking as fierce as a commander."""
 
 # Kiratás kulcs szerint növekvő sorendbe speciális jelek kivétele 
 
-def main():
-    li = TEXT.lower().split()
-    d = {}
-    for w in li:
-        print(w)
-        if w not in d and w + ',' not in d:
-            d[w] = 1
-        else: 
-            d[w] += 1
-    
+def replaceWords(text,dict):
+    for key in dict:
+        text = text.replace(key, dict[key])
+    return text
 
-    for k, v in d.items():
-     print(k,'=>',v)
+def main():
+    d1 = {'"':' ',',':' ','__':' ','--':' ','!':' ',
+    ':':' ',';':' ','?':' ','.':' ',' dr ':' dr.'}
+    text = TEXT.lower()
+    text = replaceWords(text,d1)
+    d2 = {}
+    li = text.split()
+    for w in li:
+        if w not in d2:
+            d2[w] = 1
+        else: 
+            d2[w] += 1
+    
+    for k in sorted(d2.keys()):
+        print(k, "->", d2[k])
     
     
 

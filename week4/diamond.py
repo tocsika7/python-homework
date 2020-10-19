@@ -1,22 +1,29 @@
-def diamond(h):
-    height = int(input())
-    if height % 2 == 0:
-        print("nem páratlan")
-    else:
-        nums = [ i for i in range(height+1) if i%2 == 1]
-        for i in nums:
-            print(" "*int((height-i)/2) + "*"*i + " "*int((height-i)/2))
-        nums.remove(height)
-        nums.reverse()
-        for i in nums:
-            print(" "*int((height-i)/2) + "*"*i + " "*int((height-i)/2))
+import sys
+
+def diamond(size):
+
+    if size % 2 != 1:
+        print("Páratlan számot kell megadni")
+        sys.exit()        
+    i = 1
+    while i < size:
+        text = "*"*i
+        print(text.center(size, " "), end="")
+        print()
+        i += 2
+
+    while i > 0:
+        text = "*"*i
+        print(text.center(size, " "), end="")
+        print()
+        i -= 2
 
 
 
 
 
 def main():
-    diamond(7)
+    diamond(11)
 
 if __name__ == "__main__":
     main()

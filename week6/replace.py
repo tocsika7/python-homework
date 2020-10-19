@@ -1,6 +1,14 @@
-def replaceWords(text,dict):
+def replaceWordsDict(text,dict):
     for key in dict:
         text = text.replace(key, dict[key])
+    return text
+
+def replaceWords(text,original,changed):
+    i = 0
+    while i < len(original):
+        text = text.replace(original[i],changed[i])
+        i += 1
+    
     return text
 
 def main():
@@ -14,7 +22,9 @@ def main():
 
     A döntés várhatóan nem marad politikai visszhang nélkül Spanyolországban, tekintettel a katalán önállósodási törekvésekre."""
 
-    print(replaceWords(text,d))
+    print(replaceWordsDict(text,d))
+    print(replaceWords(text,'áéíóöőúüűÁÉÍÓÖŐÚÜŰ',
+    'aeiooouuuAEIOOOUUU'))
 
 if __name__ == "__main__":
     main()
