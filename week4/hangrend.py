@@ -16,12 +16,12 @@ def hangrend(word):
                 magas += 1
 
     if magas > 0 and mely > 0:
-        return 1
+        return MAGAS
     else:
         if mely > 0: 
-            return 0
+            return MELY
         else:
-            return 2
+            return VEGYES
 
 def main():
     print(hangrend('kisvasút'))

@@ -1,22 +1,15 @@
 def diamond(h):
-    if h % 2 == 0:
-        print('Invalid height')
-        return 0 
-
-    li = [i for i in range(1,(h+1)//2)]
-    li2 = [i for i in reversed(range(1,(h+1)//2))]
-    
-    for i in li:
-        if i == 1:
-            print('*'.center(h))
-        else:
-            print(('*' * (i+(i-1))).center(h))
-    
-    for i in li2:
-        if i == 1:
-            print('*'.center(h))
-        else:
-            print(('*' * (i+(i-1))).center(h))
+    height = int(input())
+    if height % 2 == 0:
+        print("nem páratlan")
+    else:
+        nums = [ i for i in range(height+1) if i%2 == 1]
+        for i in nums:
+            print(" "*int((height-i)/2) + "*"*i + " "*int((height-i)/2))
+        nums.remove(height)
+        nums.reverse()
+        for i in nums:
+            print(" "*int((height-i)/2) + "*"*i + " "*int((height-i)/2))
 
 
 
