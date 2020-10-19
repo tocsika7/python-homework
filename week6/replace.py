@@ -4,10 +4,8 @@ def replaceWordsDict(text,dict):
     return text
 
 def replaceWords(text,original,changed):
-    i = 0
-    while i < len(original):
+    for i in range(len(original)):
         text = text.replace(original[i],changed[i])
-        i += 1
     
     return text
 
