@@ -1,13 +1,8 @@
-def replaceWordsDict(text,dict):
+def removeAccent(text,dict):
     for key in dict:
         text = text.replace(key, dict[key])
     return text
 
-def replaceWords(text,original,changed):
-    for i in range(len(original)):
-        text = text.replace(original[i],changed[i])
-    
-    return text
 
 def main():
     d = {'á':'a','Á':'A','é':'e','É':'E','ó':'o','Ó':'O',
@@ -20,9 +15,8 @@ def main():
 
     A döntés várhatóan nem marad politikai visszhang nélkül Spanyolországban, tekintettel a katalán önállósodási törekvésekre."""
 
-    print(replaceWordsDict(text,d))
-    print(replaceWords(text,'áéíóöőúüűÁÉÍÓÖŐÚÜŰ',
-    'aeiooouuuAEIOOOUUU'))
+    print(removeAccent(text,d))
+  
 
 if __name__ == "__main__":
     main()
