@@ -6,15 +6,6 @@ class Queue:
     def betesz(self, value):
         self.data.append(value)
 
-    def beteszBalrol(self, value):
-        self.data.insert(0, value)
-
-    def kivesz(self):
-        if not self.data:
-            return "Hiba a sor üres"
-        else:
-            return self.data.pop()
-
     def kiveszBalrol(self):
         if not self.data:
             return "Hiba a sor üres"
@@ -34,12 +25,11 @@ def main():
     q = Queue()
     print(q)
     q.betesz(5)
-    q.beteszBalrol(11)
+    q.betesz(32)
     print(q)
     print(q.meret())
     q.kiveszBalrol()
     print(q)
-    q.kivesz()
     print(q.ures())
     print(q.kiveszBalrol())
 
